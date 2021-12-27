@@ -26,7 +26,7 @@ passwords, users, sudoers and grub configuration (only EFI is being supported fo
 
 Finally allocating swap as a file.
 
-## Caveats
+## Network (wifi)
 
 There's no preconfigured network, use iwd to configure the wifi connection if needed, some iwd hints:
 
@@ -67,9 +67,12 @@ systemctl start iwd
 /var/lib/iwd/
 ```
 
+More about iwd: https://wiki.archlinux.org/title/Iwd.
 
-
-
+Check also: 
+- https://wiki.archlinux.org/title/netctl
+- https://wiki.archlinux.org/title/systemd-networkd
+- https://wiki.archlinux.org/title/NetworkManager
 
 
 
