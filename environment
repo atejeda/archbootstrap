@@ -1,7 +1,18 @@
-ARCH_HOSTNAME=hostname
+# username and hostname
+
 ARCH_USER=username
+ARCH_HOSTNAME=hostname
+
+# the device to use, lsblk can help
+
 ARCH_DEVICE=/dev/nvme0n1
+
+# lvm layout
+
 ARCH_PVNAME=lvmpv0
 ARCH_VGNAME=lvmvg0
 ARCH_LVNAME=lvmarch
+
+# swap configuration
+
 ARCH_SWAPSIZE=6G
