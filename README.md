@@ -26,44 +26,61 @@ passwords, users, sudoers and grub configuration (only EFI is being supported fo
 
 Finally allocating swap as a file.
 
-## Network (wifi)
+## Network (WiFi)
 
 There's no preconfigured network, use iwd to configure the wifi connection if needed, some iwd hints:
 
-
+List devices
 ```
-# list devices
 iwctl device list
+```
 
-# scan
+Scan networks
+```
 iwctl station DEVICE scan
+```
 
-# show networks
+Show networks
+```
 iwctl station DEVICE get-networks
+```
 
-# connect
+Connect
+```
 iwctl station DEVICE connect SSID --passphrase PASSWORD
+```
 
-# check connection
+Check connection
+```
 iwctl station DEVICE show
+```
 
-# dhcp configuration if needed
+DHCP configuration
+```
 dhclient
+```
 
-# test network
+Check connection
+```
 ping 1.1.1.1.
+```
 
-# enable integrated dhcp
+Enable integrated DHCP (if needed)
+```
 cat <<EOF > /etc/iwd/main.conf
 [General]
 EnableNetworkConfiguration=true
 EOF
+```
 
-# start daemon if necessary
+Start iwd daemon (if necessary)
+```
 systemctl status iwd
 systemctl start iwd
+```
 
-# network configuration files
+Configuration files
+```
 /var/lib/iwd/
 ```
 
