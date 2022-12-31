@@ -19,6 +19,12 @@ basic LVM layout with ext4 as the filesystem.
 After the disk has been configured, it generates a environment.partition file
 to be used by the 01.script.sh (needed to configure and setup grub).
 
+## chroot
+
+```
+arch-chroot /mnt
+```
+
 ## 01.step.sh
 
 It does some local and locale configuration, setting up the hostname, resolv, 
