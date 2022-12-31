@@ -13,6 +13,7 @@ echo ""
 timedatectl set-ntp true
 
 pacman -Syy
+pacman -Syy archlinux-keyring
 
 lsblk
 
@@ -53,8 +54,6 @@ mount /dev/$ARCH_VGNAME/$ARCH_LVNAME /mnt
 mkdir -p /mnt/boot
 mount $ARCH_DEVICE1 /mnt/boot
 
-genfstab -U /mnt >> /mnt/etc/fstab
-
 pacstrap /mnt \
          base base-devel cups dhclient dialog dmenu dosfstools efibootmgr \
          emacs firefox git grub iwd libxss \
@@ -64,6 +63,7 @@ pacstrap /mnt \
          xclip xdg-user-dirs xdg-utils xorg xorg-xinit xscreensaver xterm \
          xorg-xauth libffi xorg-xmessage bash
 
+genfstab -U /mnt >> /mnt/etc/fstab
 
 rsync -avP $BASEDIR /mnt/bootstrap
          
