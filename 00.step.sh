@@ -2,6 +2,8 @@
 
 BASEDIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
+set -e
+
 ENVFILE=$BASEDIR/environment
 source $ENVFILE
 cat $ENVFILE
