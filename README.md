@@ -23,6 +23,7 @@ to be used by the 01.script.sh (needed to configure and setup grub).
 
 ```
 arch-chroot /mnt
+cd /bootstrap/archbootstrap/
 ```
 
 ## 01.step.sh
